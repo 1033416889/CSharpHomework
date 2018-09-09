@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHomework-project1", "CSharpHomework\CSharpHomework-project1.csproj", "{32445EA3-D428-44D6-AF31-FA07BA20F985}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHomework-project2", "..\CSharpHomework2\CSharpHomework2\CSharpHomework-project2.csproj", "{91BD3E98-DD23-4383-BF0A-3F74795ABEB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHomework-project2", "CSharpHomework2\CSharpHomework-project2.csproj", "{91BD3E98-DD23-4383-BF0A-3F74795ABEB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
