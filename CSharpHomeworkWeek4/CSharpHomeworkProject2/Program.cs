@@ -10,6 +10,8 @@ namespace CSharpHomeworkProject2
     {
         static void Main(string[] args)
         {
+            OrderService myService = new OrderService();
+            myService.StartOrderService();
         }
     }
 }
