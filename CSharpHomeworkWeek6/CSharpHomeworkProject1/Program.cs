@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpHomeworkWeek4
+namespace CSharpHomeworkProject2
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-
+            OrderService myService = new OrderService();
+            myService.StartOrderService();
         }
     }
 }

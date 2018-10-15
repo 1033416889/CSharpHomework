@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("CSharpHomeworkWeek4")]
+[assembly: AssemblyTitle("CSharpHomeworkProject2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CSharpHomeworkWeek4")]
+[assembly: AssemblyProduct("CSharpHomeworkProject2")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("13a073a1-e80f-4675-b242-b63965cf4bb2")]
+[assembly: Guid("d87b8985-b9e0-4d64-854e-303dfb28edb1")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
