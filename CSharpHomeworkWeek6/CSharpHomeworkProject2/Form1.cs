@@ -58,9 +58,12 @@ namespace CSharpHomeworkProject2
 
         void reDraw()
         {
-            if(graphics==null) graphics = this.CreateGraphics();
-            graphics.Clear(this.BackColor);
-            drawCayleyTree(10, 300, 410, 100, -Math.PI / 2);
+            if (checkBox1.Checked)
+            {
+                if (graphics == null) graphics = this.CreateGraphics();
+                graphics.Clear(this.BackColor);
+                drawCayleyTree(10, 300, 410, 100, -Math.PI / 2);
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -68,7 +71,6 @@ namespace CSharpHomeworkProject2
             TrackBar obj = (TrackBar)sender;
             textBox3.Text = obj.Value.ToString();
 
-            reDraw();
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
@@ -76,7 +78,6 @@ namespace CSharpHomeworkProject2
             TrackBar obj = (TrackBar)sender;
             textBox2.Text = obj.Value.ToString();
 
-            reDraw();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -95,6 +96,8 @@ namespace CSharpHomeworkProject2
             }
             else obj.Text = "0";
             th1 = int.Parse(obj.Text)*Math.PI/180;
+            reDraw();
+
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -119,6 +122,8 @@ namespace CSharpHomeworkProject2
             }
             else obj.Text = "0";
             th2 = int.Parse(obj.Text)*Math.PI/180;
+
+            reDraw();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -250,6 +255,8 @@ namespace CSharpHomeworkProject2
             else obj.Text = "1";
 
             myPen.Width = int.Parse(obj.Text);
+
+            reDraw();
         }
 
         private void trackBar6_Scroll(object sender, EventArgs e)
@@ -257,7 +264,11 @@ namespace CSharpHomeworkProject2
             TrackBar obj = (TrackBar)sender;
             textBox6.Text = obj.Value.ToString();
 
-            reDraw();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

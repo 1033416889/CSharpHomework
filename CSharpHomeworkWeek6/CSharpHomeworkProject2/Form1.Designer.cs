@@ -51,6 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.trackBar6 = new System.Windows.Forms.TrackBar();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -253,7 +254,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(748, 460);
+            this.button2.Location = new System.Drawing.Point(747, 444);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(214, 47);
             this.button2.TabIndex = 19;
@@ -294,11 +295,24 @@
             this.trackBar6.Value = 1;
             this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.checkBox1.Location = new System.Drawing.Point(748, 512);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(231, 24);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "实时绘制(可能会卡顿)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 607);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.trackBar6);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label8);
@@ -322,7 +336,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.trackBar2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
@@ -334,6 +347,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            button2.BringToFront();
         }
 
         #endregion
@@ -360,6 +374,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TrackBar trackBar6;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
