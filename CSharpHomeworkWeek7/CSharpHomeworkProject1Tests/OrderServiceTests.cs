@@ -161,5 +161,12 @@ namespace CSharpHomeworkProject1.Tests
             os = new OrderService();
             os.Import();
         }
+
+        [TestMethod()]
+        public void ExportTest1()
+        {
+            os = new OrderService();
+            os.Export();
+        }
     }
 }
