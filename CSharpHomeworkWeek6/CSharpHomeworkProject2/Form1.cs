@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+using System.IO;
 
 namespace CSharpHomeworkProject2
 {
@@ -19,6 +22,7 @@ namespace CSharpHomeworkProject2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GetProcess();
             if (graphics == null) graphics = this.CreateGraphics();
             else
             {
@@ -269,6 +273,11 @@ namespace CSharpHomeworkProject2
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
