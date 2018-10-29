@@ -17,6 +17,11 @@ namespace CSharpHomeworkProject1
             InitializeComponent();
         }
 
+        public Form5(string str):this()
+        {
+            label1.Text = str;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -26,5 +31,6 @@ namespace CSharpHomeworkProject1
         {
             this.Close();
         }
+
     }
 }

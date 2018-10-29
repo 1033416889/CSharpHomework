@@ -14,6 +14,7 @@ namespace CSharpHomeworkProject1
     {
         public static List<Order> orders = new List<Order>();
         public string KeyCode { get; set; }
+        public static OrderService os = new OrderService();
 
         public Form1()
         {
@@ -47,6 +48,8 @@ namespace CSharpHomeworkProject1
             bindingSource1.DataSource = orders;
 
             textBox1.DataBindings.Add("Text", this, "KeyCode");
+
+            comboBox1.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -58,7 +61,41 @@ namespace CSharpHomeworkProject1
         {
             if (KeyCode != ""&&KeyCode!=null)
             {
-                bindingSource1.DataSource = orders.Where(s => s.Id.ToString() == KeyCode);
+                bool flag = false;
+                try
+                {
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        List<Order> neworders = orders.Where(s => s.Id.ToString() == KeyCode).ToList();
+                        if (neworders.Count == 0) flag = true;
+                        bindingSource1.DataSource = neworders;
+                    }
+                    else if (comboBox1.SelectedIndex == 1)
+                    {
+                        List<Order> neworders = orders.Where(order => order.Customer.Name == textBox1.Text).ToList();
+                        if (neworders.Count == 0) flag = true;
+                        bindingSource1.DataSource = neworders;
+
+                    }
+                    else if (comboBox1.SelectedIndex == 2)
+                    {
+                        List<Order> neworders = orders.Where(order =>
+                            order.Details.Where(d => d.Goods.Name == textBox1.Text).Count() > 0).ToList();
+                        if (neworders.Count == 0) flag = true;
+                        bindingSource1.DataSource = neworders;
+                    }
+                    else if (comboBox1.SelectedIndex == 3)
+                    {
+                        List<Order> neworders = orders.Where(order => order.Amount > double.Parse(textBox1.Text)).ToList();
+                        if (neworders.Count == 0) flag = true;
+                        bindingSource1.DataSource = neworders;
+                    }
+                }
+                catch
+                {
+                    new Form5("无法查询到该数据").ShowDialog();
+                }
+                if(flag) new Form5("无法查询到该数据").ShowDialog();
             }
             else
             {
@@ -75,7 +112,7 @@ namespace CSharpHomeworkProject1
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             new Form3(e.RowIndex).ShowDialog();
-            
+            bindingSource1.ResetBindings(true);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -84,5 +121,12 @@ namespace CSharpHomeworkProject1
             bindingSource1.ResetBindings(true);
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                button1.PerformClick();
+            }
+        }
     }
 }

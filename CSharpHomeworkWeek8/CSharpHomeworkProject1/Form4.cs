@@ -27,17 +27,39 @@ namespace CSharpHomeworkProject1
             switch (comboBox2.SelectedItem.ToString())
             {
                 case "订单ID":
-                    Form1.orders[comboBox1.SelectedIndex].Id = uint.Parse(textBox1.Text);
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Id.ToString();
                     break;
                 case "客户ID":
-                    Form1.orders[comboBox1.SelectedIndex].Customer.Id = uint.Parse(textBox1.Text);
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Customer.Id.ToString();
                     break;
                 case "客户名":
-                    Form1.orders[comboBox1.SelectedIndex].Customer.Name = textBox1.Text;
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Customer.Name;
+                    break;
+                case "订单明细":
+                    new Form3(comboBox1.SelectedIndex).ShowDialog();
                     break;
             }
 
             new Form5().ShowDialog();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox2.SelectedItem.ToString())
+            {
+                case "订单ID":
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Id.ToString();
+                    break;
+                case "客户ID":
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Customer.Id.ToString();
+                    break;
+                case "客户名":
+                    textBox1.Text = Form1.orders[comboBox1.SelectedIndex].Customer.Name;
+                    break;
+                case "订单明细":
+                    new Form3(comboBox1.SelectedIndex).ShowDialog();
+                    break;
+            }
         }
     }
 }

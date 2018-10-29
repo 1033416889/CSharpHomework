@@ -18,7 +18,7 @@ namespace CSharpHomeworkProject1
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        public virtual void button1_Click(object sender, EventArgs e)
         {
             Customer customer = new Customer(uint.Parse(textBox3.Text), textBox4.Text);
             Order order = new Order(uint.Parse(textBox1.Text), customer);

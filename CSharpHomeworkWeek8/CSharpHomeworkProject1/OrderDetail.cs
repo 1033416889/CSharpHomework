@@ -25,7 +25,7 @@ namespace CSharpHomeworkProject1
         public OrderDetail()
         {
             Id = 0;
-            Goods = null;
+            Goods = new Goods();
             Quantity = 0;
         }
 
