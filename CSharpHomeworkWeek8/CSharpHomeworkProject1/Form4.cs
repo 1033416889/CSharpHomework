@@ -19,7 +19,12 @@ namespace CSharpHomeworkProject1
             {
                 comboBox1.Items.Add(o.Id);
             }
-            comboBox1.Text = comboBox1.Items[0].ToString();
+            comboBox1.Text = comboBox1.Items[0].ToString();   //旧的处理方案，现已启用
+        }
+
+        public Form4(int num) : this()  //通过传入选择的行，自动显示修改的订单ID，不做大的修改了
+        {
+            comboBox1.Text = comboBox1.Items[num].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

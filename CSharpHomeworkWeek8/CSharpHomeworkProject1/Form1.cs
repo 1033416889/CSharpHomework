@@ -117,7 +117,7 @@ namespace CSharpHomeworkProject1
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new Form4().ShowDialog();
+            new Form4(dataGridView1.SelectedRows[0].Index).ShowDialog();
             bindingSource1.ResetBindings(true);
         }
 
@@ -127,6 +127,12 @@ namespace CSharpHomeworkProject1
             {
                 button1.PerformClick();
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            new Form3(dataGridView1.SelectedRows[0].Index).ShowDialog();
+            bindingSource1.ResetBindings(true);
         }
     }
 }

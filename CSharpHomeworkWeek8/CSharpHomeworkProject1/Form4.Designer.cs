@@ -105,7 +105,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "选择订单ID:";
+            this.label1.Text = "修改订单ID:";
             // 
             // comboBox1
             // 

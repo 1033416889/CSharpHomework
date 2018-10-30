@@ -41,5 +41,11 @@ namespace CSharpHomeworkProject1
             new Form6(Num, 2, e.RowIndex).ShowDialog();
             bindingSource1.ResetBindings(true);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            new Form6(Num,2,dataGridView1.SelectedRows[0].Index).ShowDialog();
+            bindingSource1.ResetBindings(true);
+        }
     }
 }
