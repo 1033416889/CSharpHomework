@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
-    <Id>1</Id>
+    <Id>20170101123</Id>
     <Customer>
-      <Id>1</Id>
+      <Id>13476541234</Id>
       <Name>Customer1</Name>
     </Customer>
     <Details>
@@ -37,9 +37,9 @@
     </Details>
   </Order>
   <Order>
-    <Id>2</Id>
+    <Id>20181231857</Id>
     <Customer>
-      <Id>2</Id>
+      <Id>15398760987</Id>
       <Name>Customer2</Name>
     </Customer>
     <Details>
@@ -64,9 +64,9 @@
     </Details>
   </Order>
   <Order>
-    <Id>3</Id>
+    <Id>20181111111</Id>
     <Customer>
-      <Id>2</Id>
+      <Id>15398760987</Id>
       <Name>Customer2</Name>
     </Customer>
     <Details>
@@ -78,6 +78,24 @@
           <Price>69.9</Price>
         </Goods>
         <Quantity>1</Quantity>
+      </OrderDetail>
+    </Details>
+  </Order>
+  <Order>
+    <Id>20171111111</Id>
+    <Customer>
+      <Id>13212312311</Id>
+      <Name>123</Name>
+    </Customer>
+    <Details>
+      <OrderDetail>
+        <Id>0</Id>
+        <Goods>
+          <Id>0</Id>
+          <Name />
+          <Price>0</Price>
+        </Goods>
+        <Quantity>0</Quantity>
       </OrderDetail>
     </Details>
   </Order>

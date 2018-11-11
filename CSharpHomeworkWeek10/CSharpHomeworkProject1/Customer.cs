@@ -9,11 +9,11 @@ namespace CSharpHomeworkProject1
     [Serializable]
     public class Customer
     {
-        public uint Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
-        public Customer(uint id = 0,string name = "")
+        public Customer(string id = "",string name = "")
         {
             Id = id;
             Name = name;
@@ -21,7 +21,7 @@ namespace CSharpHomeworkProject1
 
         public Customer()
         {
-            Id = 0;
+            Id = "";
             Name = "";
         }
 

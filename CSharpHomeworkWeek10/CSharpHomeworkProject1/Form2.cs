@@ -32,7 +32,7 @@ namespace CSharpHomeworkProject1
                 flag = false;
                 new Form5("订单ID格式有误！").ShowDialog();
             }
-            if(textBox1.Text!=null&&textBox1.Text!="" && Form1.orders.Where(o => o.Id == uint.Parse(textBox1.Text)).Count() > 0)
+            if(textBox1.Text!=null&&textBox1.Text!="" && Form1.orders.Where(o => o.Id == textBox1.Text).Count() > 0)
             {
                 flag = false;
                 new Form5("该订单已存在！").ShowDialog();
@@ -44,8 +44,8 @@ namespace CSharpHomeworkProject1
             }
             if (flag)
             {
-                Customer customer = new Customer(uint.Parse(textBox3.Text), textBox4.Text);
-                Order order = new Order(uint.Parse(textBox1.Text), customer);
+                Customer customer = new Customer(textBox3.Text, textBox4.Text);
+                Order order = new Order(textBox1.Text, customer);
                 Form1.orders.Add(order);
                 this.Close();
             }

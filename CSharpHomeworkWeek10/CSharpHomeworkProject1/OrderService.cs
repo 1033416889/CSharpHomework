@@ -19,12 +19,12 @@ namespace CSharpHomeworkProject1
 
         public void AddOrder(Order order)
         {
-            if (orderDict.ContainsKey(order.Id))
-            {
-                // throw new Exception("该订单已存在");
-                return;
-            }
-            orderDict[order.Id] = order;
+            //if (orderDict.ContainsKey(order.Id))
+            //{
+            //    // throw new Exception("该订单已存在");
+            //    return;
+            //}
+            //orderDict[order.Id] = order;
         }
 
         public void RemoveOrder(uint orderId)

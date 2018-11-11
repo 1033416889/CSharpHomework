@@ -11,11 +11,11 @@ namespace CSharpHomeworkProject1
     {
         private List<OrderDetail> details = new List<OrderDetail>();
 
-        public uint Id { get; set; }
+        public string Id { get; set; }
 
         public Customer Customer { get; set; }
 
-        public Order(uint id = 0,Customer customer = null)
+        public Order(string id = "",Customer customer = null)
         {
             Id = id;
             Customer = customer;
@@ -23,7 +23,7 @@ namespace CSharpHomeworkProject1
 
         public Order()
         {
-            Id = 0;
+            Id = "";
             Customer = null;
         }
 
