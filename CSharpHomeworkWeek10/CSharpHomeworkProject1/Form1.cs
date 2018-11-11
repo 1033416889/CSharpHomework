@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml.XPath;
+using System.Xml.Xsl;
+using System.Xml;
 
 namespace CSharpHomeworkProject1
 {
@@ -98,6 +101,7 @@ namespace CSharpHomeworkProject1
                     new Form5("无法查询到该数据").ShowDialog();
                 }
                 if(flag) new Form5("无法查询到该数据").ShowDialog();
+
             }
             else
             {
@@ -139,11 +143,41 @@ namespace CSharpHomeworkProject1
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Order>));
-            using (FileStream fs = new FileStream("s.xml", FileMode.Create))
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "(HTML)|*.html";
+            saveFileDialog1.Title = "保存html路径：";
+            saveFileDialog1.ShowDialog();
+            string path = System.IO.Path.GetFullPath(saveFileDialog1.FileName);
+
+            if (saveFileDialog1.FileName != "")
             {
-                xmlSerializer.Serialize(fs, orders);
+
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Order>));
+                using (FileStream fs = new FileStream(@"..\..\OrderList.xml", FileMode.Create))
+                {
+                    xmlSerializer.Serialize(fs, orders);
+                }
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load(@"..\..\OrderList.xml");
+
+                XPathNavigator nav = doc.CreateNavigator();
+                nav.MoveToRoot();
+
+                XslCompiledTransform xt = new XslCompiledTransform();
+                xt.Load(@"..\..\OrderList.xslt");
+
+                FileStream outFileStream = File.OpenWrite(path);
+                XmlTextWriter writer =
+                    new XmlTextWriter(outFileStream, System.Text.Encoding.UTF8);
+                xt.Transform(nav, null, writer);
+
+                outFileStream.Close();
             }
+
+            System.Diagnostics.Process.Start("explorer.exe", path);
+            new Form5("导出成功！").ShowDialog();
+            
         }
     }
 }
