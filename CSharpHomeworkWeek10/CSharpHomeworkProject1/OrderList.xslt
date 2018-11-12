@@ -16,7 +16,7 @@
 									<ul>
 										<xsl:for-each select="Customer">
 										<li>
-											客户ID：<xsl:value-of select="Id" />
+											客户电话：<xsl:value-of select="Id" />
 										</li>
 										<li>
 											客户名：<xsl:value-of select="Name" />
