@@ -72,7 +72,10 @@ namespace CSharpHomeworkProject1
                 WebClient webClient = new WebClient();
                 webClient.Encoding = Encoding.UTF8;
                 string html = webClient.DownloadString(url);
-                count2++;
+                lock (this)
+                {
+                    count2++;
+                }  
                 string fileName = count2.ToString();
                 File.WriteAllText(fileName, html, Encoding.UTF8);
                 Console.WriteLine("下载完成:" + url +"编号:"+count2);
